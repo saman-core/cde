@@ -1,8 +1,4 @@
 {
-  "packageName": "io.samancore.template",
-  "categoryType": "1",
-  "name": "Bank",
-  "productName":"Vida",
     "components": [
         {
             "label": "Text Field",
