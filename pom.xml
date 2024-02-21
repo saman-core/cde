@@ -216,4 +216,25 @@
             </properties>
         </profile>
     </profiles>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>github</id>
+            <name>Central Internal Repo</name>
+            <url>https://maven.pkg.github.com/saman-core/*</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub saman-core Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/saman-core/cde</url>
+        </repository>
+    </distributionManagement>
 </project>
