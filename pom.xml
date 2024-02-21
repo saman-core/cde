@@ -49,11 +49,6 @@
     </dependencyManagement>
     <dependencies>
         <dependency>
-            <groupId>io.samancore</groupId>
-            <artifactId>common</artifactId>
-            <version>0.0.1</version>
-        </dependency>
-        <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-junit5</artifactId>
             <scope>test</scope>
@@ -64,14 +59,6 @@
             <scope>test</scope>
         </dependency>
 <!--   native images-->
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-container-image-jib</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-kubernetes</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

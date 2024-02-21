@@ -12,6 +12,13 @@
     <groupId>io.samancore.cde</groupId>
     <artifactId>cde-model</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>io.samancore</groupId>
+            <artifactId>common-model</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+    </dependencies>
     <properties>
         <maven.compiler.release>17</maven.compiler.release>
     </properties>

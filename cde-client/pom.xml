@@ -20,6 +20,16 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>io.samancore</groupId>
+            <artifactId>common</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.samancore</groupId>
+            <artifactId>common-error</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-rest-client-reactive</artifactId>
         </dependency>
