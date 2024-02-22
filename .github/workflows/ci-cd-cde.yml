@@ -68,7 +68,8 @@ jobs:
 
       - name: Build native app
         run: |
-          ./mvnw package -Dnative -DskipTests
+          ./mvnw install -DskipTests
+          ./mvnw -pl cde-application package -Pnative -DskipTests
 
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v3
