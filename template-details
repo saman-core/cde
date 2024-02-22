@@ -1,3 +1,3 @@
-templateName=bank
-productName=vida
+templateName=TEMPLATE_NAME
+productName=PRODUCT_NAME
 packageName=io.samancore.template
