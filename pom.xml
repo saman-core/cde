@@ -58,12 +58,15 @@
             <artifactId>quarkus-junit5-mockito</artifactId>
             <scope>test</scope>
         </dependency>
-<!--   native images-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
@@ -101,7 +104,6 @@
                 <executions>
                     <execution>
                         <goals>
-                            <goal>generator-class</goal>
                         </goals>
                     </execution>
                 </executions>
