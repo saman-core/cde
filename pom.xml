@@ -34,7 +34,7 @@
         <commons-math3.version>3.6.1</commons-math3.version>
         <commons-collections4>4.4</commons-collections4>
 
-        <jandex-maven-plugin-version>3.0.5</jandex-maven-plugin-version>
+        <jandex-maven-plugin-version>3.1.6</jandex-maven-plugin-version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -128,7 +128,9 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${compiler-plugin.version}</version>
                 <configuration>
-                    <parameters>${maven.compiler.parameters}</parameters>
+                    <compilerArgs>
+                        <arg>-parameters</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
             <plugin>
@@ -150,16 +152,15 @@
                             <goal>integration-test</goal>
                             <goal>verify</goal>
                         </goals>
-                        <configuration>
-                            <systemPropertyVariables>
-                                <native.image.path>${project.build.directory}/${project.build.finalName}-runner
-                                </native.image.path>
-                                <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
-                                <maven.home>${maven.home}</maven.home>
-                            </systemPropertyVariables>
-                        </configuration>
                     </execution>
                 </executions>
+                <configuration>
+                    <systemPropertyVariables>
+                        <native.image.path>${project.build.directory}/${project.build.finalName}-runner</native.image.path>
+                        <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
+                        <maven.home>${maven.home}</maven.home>
+                    </systemPropertyVariables>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
