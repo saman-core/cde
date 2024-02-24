@@ -10,6 +10,7 @@
     <modules>
         <module>cde-model</module>
         <module>cde-client</module>
+        <module>cde-data</module>
         <module>cde-application</module>
     </modules>
     <properties>

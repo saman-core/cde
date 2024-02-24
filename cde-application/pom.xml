@@ -15,6 +15,12 @@
     <dependencies>
         <dependency>
             <groupId>io.samancore.cde</groupId>
+            <artifactId>cde-data</artifactId>
+            <version>0.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.samancore.cde</groupId>
             <artifactId>cde-model</artifactId>
             <version>0.0.1</version>
             <scope>compile</scope>
