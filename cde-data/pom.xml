@@ -14,18 +14,21 @@
 
     <dependencies>
         <dependency>
-            <groupId>io.samancore</groupId>
-            <artifactId>common</artifactId>
-            <version>0.0.1</version>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-hibernate-reactive</artifactId>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
     <properties>
         <maven.compiler.release>17</maven.compiler.release>
+        <commons-lang3.version>3.12.0</commons-lang3.version>
     </properties>
 
 </project>
