@@ -105,7 +105,7 @@
                 <executions>
                     <execution>
                         <goals>
-                            <goal>generator-class</goal>
+                            <goal>generate-code</goal>
                         </goals>
                     </execution>
                 </executions>
