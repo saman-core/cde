@@ -107,6 +107,16 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
 
+      - name: Update Template Schema JSON
+        env:
+          CLIENT_ID: ${{ secrets.T_OIDC_CLIENT_ID }}
+          USERNAME: ${{ secrets.T_OIDC_USERNAME }}
+          PASSWORD: ${{ secrets.T_OIDC_PASSWORD }}
+          TEMPLATE_SERVER_URL: ${{ secrets.TEMPLATE_SERVER_URL }}
+        run: |
+          aws cognito-idp initiate-auth --auth-flow USER_PASSWORD_AUTH --client-id ${{ env.CLIENT_ID }} --auth-parameters USERNAME=${{ env.USERNAME }},PASSWORD=${{ env.PASSWORD }} --output text | cut -f2 > auttoken
+          curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer $(cat auttoken)" -X POST -d '$(cat form.json)' ${{ env.TEMPLATE_SERVER_URL }}/templates/${{ env.PRODUCT }}/${{ env.TEMPLATE }}
+
       - name: Update kube config
         run: aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region $AWS_REGION
 
