@@ -6,7 +6,7 @@
     <groupId>io.samancore</groupId>
     <artifactId>cde</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <modules>
         <module>cde-model</module>
         <module>cde-client</module>
@@ -91,7 +91,7 @@
             <plugin>
                 <groupId>io.samancore</groupId>
                 <artifactId>process-template</artifactId>
-                <version>0.0.1</version>
+                <version>0.0.2</version>
                 <executions>
                     <execution>
                         <goals>

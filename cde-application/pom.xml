@@ -5,7 +5,7 @@
     <parent>
         <groupId>io.samancore</groupId>
         <artifactId>cde</artifactId>
-        <version>0.0.1</version>
+        <version>0.0.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -16,19 +16,19 @@
         <dependency>
             <groupId>io.samancore.cde</groupId>
             <artifactId>cde-data</artifactId>
-            <version>0.0.1</version>
+            <version>0.0.2</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.samancore.cde</groupId>
             <artifactId>cde-model</artifactId>
-            <version>0.0.1</version>
+            <version>0.0.2</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.samancore</groupId>
             <artifactId>common</artifactId>
-            <version>0.0.1</version>
+            <version>0.0.2</version>
         </dependency>
         <dependency>
             <groupId>io.samancore</groupId>
