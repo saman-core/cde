@@ -89,6 +89,12 @@ jobs:
           ./mvnw -s ./settings.xml install -DskipTests
           ./mvnw -s ./settings.xml -pl cde-application package -Pnative -DskipTests
 
+      - name: Deploy app
+        run: |
+          ./mvnw -s ./settings.xml -pl cde-client deploy -DskipTests
+          ./mvnw -s ./settings.xml -pl cde-data deploy -DskipTests
+          ./mvnw -s ./settings.xml -pl cde-model deploy -DskipTests
+
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v3
 
