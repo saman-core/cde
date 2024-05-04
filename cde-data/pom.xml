@@ -5,12 +5,12 @@
     <parent>
         <groupId>io.samancore</groupId>
         <artifactId>cde</artifactId>
-        <version>0.0.2</version>
+        <version>APP_VERSION</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.samancore.cde</groupId>
-    <artifactId>cde-data</artifactId>
+    <artifactId>APP_NAME-data</artifactId>
 
     <dependencies>
         <dependency>

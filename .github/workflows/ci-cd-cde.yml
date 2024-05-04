@@ -70,6 +70,14 @@ jobs:
         run: |
           sed -i -e 's/TEMPLATE_NAME/${{ env.TEMPLATE }}/g' -e 's/PRODUCT_NAME/${{ env.PRODUCT }}/g' ./cde-client/src/main/resources/META-INF/microprofile-config.properties
 
+      - name: Replace POMs name and version
+        run: |
+          sed -i -e 's/APP_NAME/${{ env.APP_NAME }}/g' -e 's/APP_VERSION/${{ github.run_number }}/g' ./cde-application/pom.xml
+          sed -i -e 's/APP_NAME/${{ env.APP_NAME }}/g' -e 's/APP_VERSION/${{ github.run_number }}/g' ./cde-client/pom.xml
+          sed -i -e 's/APP_NAME/${{ env.APP_NAME }}/g' -e 's/APP_VERSION/${{ github.run_number }}/g' ./cde-data/pom.xml
+          sed -i -e 's/APP_NAME/${{ env.APP_NAME }}/g' -e 's/APP_VERSION/${{ github.run_number }}/g' ./cde-model/pom.xml
+          sed -i -e 's/APP_NAME/${{ env.APP_NAME }}/g' -e 's/APP_VERSION/${{ github.run_number }}/g' ./pom.xml
+
       - name: Set env
         env:
           BASE64: ${{ secrets.ENV_FILE }}
