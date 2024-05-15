@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <groupId>io.samancore</groupId>
-        <artifactId>cde</artifactId>
-        <version>APP_VERSION</version>
-    </parent>
-    <modelVersion>4.0.0</modelVersion>
-
-    <groupId>io.samancore.cde</groupId>
-    <artifactId>APP_NAME-model</artifactId>
-
-    <dependencies>
-        <dependency>
-            <groupId>io.samancore</groupId>
-            <artifactId>common-model</artifactId>
-            <version>0.0.2</version>
-        </dependency>
-    </dependencies>
-    <properties>
-        <maven.compiler.release>17</maven.compiler.release>
-    </properties>
-
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>io.samancore</groupId>
+    <artifactId>cde</artifactId>
+    <version>APP_VERSION</version>
+  </parent>
+  <groupId>io.samancore.cde</groupId>
+  <artifactId>APP_NAME-model</artifactId>
+  <properties>
+    <maven.compiler.release>17</maven.compiler.release>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>io.samancore</groupId>
+      <artifactId>common-model</artifactId>
+      <version>0.0.2</version>
+    </dependency>
+  </dependencies>
 </project>
