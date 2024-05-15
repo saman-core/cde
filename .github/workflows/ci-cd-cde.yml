@@ -83,7 +83,7 @@ jobs:
           BASE64: ${{ secrets.ENV_FILE }}
         run: |
           base64 -d -i <<<$(echo $BASE64) > .env
-          sed -i -e 's/KMS_KEY_ARN/${{ secrets.KMS_KEY_ARN }}/g' -e 's/KMS_ACCESS_KEY_ID/${{ secrets.KMS_ACCESS_KEY_ID }}/g' -e 's/KMS_SECRET_ACCESS_KEY/${{ secrets.KMS_SECRET_ACCESS_KEY }}/g' .env          
+          sed -i -e 's|KMS_KEY_ARN|${{ secrets.KMS_KEY_ARN }}|g' -e 's|KMS_ACCESS_KEY_ID|${{ secrets.KMS_ACCESS_KEY_ID }}|g' -e 's|KMS_SECRET_ACCESS_KEY|${{ secrets.KMS_SECRET_ACCESS_KEY }}|g' .env          
 
       - name: Set settings.xml
         env:
