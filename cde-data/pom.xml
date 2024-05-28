@@ -10,8 +10,9 @@
   <groupId>io.samancore.cde</groupId>
   <artifactId>APP_NAME-data</artifactId>
   <properties>
-    <commons-lang3.version>3.12.0</commons-lang3.version>
     <maven.compiler.release>17</maven.compiler.release>
+
+    <commons-lang3.version>3.12.0</commons-lang3.version>
   </properties>
   <dependencies>
     <dependency>

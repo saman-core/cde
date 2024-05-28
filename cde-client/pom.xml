@@ -11,6 +11,9 @@
   <artifactId>APP_NAME-client</artifactId>
   <properties>
     <maven.compiler.release>17</maven.compiler.release>
+
+    <common.version>0.0.3</common.version>
+    <common-error.version>0.0.1</common-error.version>
   </properties>
   <dependencies>
     <dependency>
@@ -22,12 +25,12 @@
     <dependency>
       <groupId>io.samancore</groupId>
       <artifactId>common</artifactId>
-      <version>0.0.2</version>
+      <version>${common.version}</version>
     </dependency>
     <dependency>
       <groupId>io.samancore</groupId>
       <artifactId>common-error</artifactId>
-      <version>0.0.1</version>
+      <version>${common-error.version}</version>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
