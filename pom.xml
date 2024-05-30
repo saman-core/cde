@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.samancore</groupId>
   <artifactId>cde</artifactId>
-  <version>0.0.3</version>
+  <version>APP_VERSION</version>
   <packaging>pom</packaging>
   <modules>
     <module>cde-model</module>
