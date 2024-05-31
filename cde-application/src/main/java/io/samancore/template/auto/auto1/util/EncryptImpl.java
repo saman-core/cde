@@ -21,8 +21,7 @@ public class EncryptImpl implements Encrypt {
     String keyArn;
 
     @Override
-    public byte[] encrypt(String var1) {
-        String data = String.valueOf(var1);
+    public byte[] encrypt(String data) {
         SdkBytes encryptedBytes = kms.encrypt(req ->
                 req
                         .keyId(keyArn)

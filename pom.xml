@@ -108,7 +108,7 @@
       <plugin>
         <groupId>io.samancore</groupId>
         <artifactId>process-template</artifactId>
-        <version>0.0.3</version>
+        <version>0.0.4</version>
         <executions>
           <execution>
             <goals>
