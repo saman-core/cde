@@ -11,7 +11,8 @@ import software.amazon.awssdk.services.kms.KmsClient;
 import software.amazon.awssdk.services.kms.model.DecryptResponse;
 import software.amazon.awssdk.services.kms.model.EncryptionAlgorithmSpec;
 
-@ApplicationScoped
+//TODO fix this
+//@ApplicationScoped
 public class EncryptImpl implements Encrypt {
 
     @Inject
