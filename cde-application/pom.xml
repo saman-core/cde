@@ -12,8 +12,9 @@
     <properties>
         <maven.compiler.release>17</maven.compiler.release>
 
-        <common.version>0.0.3</common.version>
-        <common-error.version>0.0.1</common-error.version>
+        <common.version>0.0.4</common.version>
+        <common-error.version>0.0.2</common-error.version>
+        <condition-template-client.version>0.0.1</condition-template-client.version>
     </properties>
     <dependencies>
         <dependency>
@@ -37,6 +38,11 @@
             <groupId>io.samancore</groupId>
             <artifactId>common-error</artifactId>
             <version>${common-error.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.samancore</groupId>
+            <artifactId>condition-template-client</artifactId>
+            <version>${condition-template-client.version}</version>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
