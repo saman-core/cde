@@ -54,7 +54,7 @@ jobs:
 
       - name: Copy files
         run: |
-          cp product-repository/$(echo $PRODUCT)/templates/$(echo $TEMPLATE)/form.json ./form.json
+          cp product-repository/products/$(echo $PRODUCT)/templates/$(echo $TEMPLATE)/form.json ./form.json
           sed -i -e 's/TEMPLATE_NAME/${{ env.TEMPLATE }}/g' -e 's/PRODUCT_NAME/${{ env.PRODUCT }}/g' ./template-details
 
       - name: Setup graalvm
