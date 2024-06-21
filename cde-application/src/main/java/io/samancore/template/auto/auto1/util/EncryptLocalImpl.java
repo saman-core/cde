@@ -6,8 +6,9 @@ import jakarta.enterprise.context.ApplicationScoped;
 
 import java.nio.charset.StandardCharsets;
 
-@ApplicationScoped
-@DefaultBean
+//TODO FIX This for local development
+//@ApplicationScoped
+//@DefaultBean
 public class EncryptLocalImpl implements Encrypt {
 
     @Override
