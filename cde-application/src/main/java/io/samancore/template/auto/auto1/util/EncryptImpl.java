@@ -1,5 +1,7 @@
 package io.samancore.template.auto.auto1.util;
 
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.Base64;
 
 import io.samancore.common.transformer.Encrypt;
@@ -13,6 +15,7 @@ import software.amazon.awssdk.services.kms.model.EncryptionAlgorithmSpec;
 
 @ApplicationScoped
 public class EncryptImpl implements Encrypt {
+    private static final byte[] EMPTY = "".getBytes(StandardCharsets.UTF_8);
 
     @Inject
     KmsClient kms;
@@ -22,6 +25,8 @@ public class EncryptImpl implements Encrypt {
 
     @Override
     public byte[] encrypt(String data) {
+        if ("".equals(data))
+            return EMPTY;
         SdkBytes encryptedBytes = kms.encrypt(req ->
                 req
                         .keyId(keyArn)
@@ -34,6 +39,8 @@ public class EncryptImpl implements Encrypt {
 
     @Override
     public String decrypt(byte[] data) {
+        if (Arrays.equals(EMPTY, data))
+            return "";
         SdkBytes encryptedData = SdkBytes.fromByteArray(Base64.getDecoder().decode(data));
         DecryptResponse decrypted = kms.decrypt(req ->
                 req
