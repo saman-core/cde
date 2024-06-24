@@ -13,7 +13,7 @@
     <maven.compiler.release>17</maven.compiler.release>
 
     <common.version>0.0.6</common.version>
-    <common-error.version>0.0.2</common-error.version>
+    <common-error.version>0.0.3</common-error.version>
   </properties>
   <dependencies>
     <dependency>
