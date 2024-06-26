@@ -13,7 +13,7 @@
     <maven.compiler.release>17</maven.compiler.release>
 
     <jakarta.validation-api.version>3.0.2</jakarta.validation-api.version>
-    <common-model.version>0.0.4</common-model.version>
+    <common-model.version>0.0.5</common-model.version>
   </properties>
   <dependencies>
     <dependency>

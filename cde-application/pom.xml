@@ -14,7 +14,7 @@
 
         <common.version>0.0.6</common.version>
         <common-error.version>0.0.3</common-error.version>
-        <condition-template-client.version>0.0.3</condition-template-client.version>
+        <condition-template-client.version>0.0.4</condition-template-client.version>
     </properties>
     <dependencies>
         <dependency>
