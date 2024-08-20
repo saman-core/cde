@@ -1,14 +1,11 @@
 package io.samancore.template.auto.auto1.util;
 
-import io.quarkus.arc.DefaultBean;
 import io.samancore.common.transformer.Encrypt;
 import jakarta.enterprise.context.ApplicationScoped;
 
 import java.nio.charset.StandardCharsets;
 
-//TODO FIX This for local development
-//@ApplicationScoped
-//@DefaultBean
+@ApplicationScoped
 public class EncryptLocalImpl implements Encrypt {
 
     @Override

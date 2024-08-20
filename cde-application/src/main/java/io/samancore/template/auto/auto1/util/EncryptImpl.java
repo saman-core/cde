@@ -13,7 +13,8 @@ import software.amazon.awssdk.services.kms.KmsClient;
 import software.amazon.awssdk.services.kms.model.DecryptResponse;
 import software.amazon.awssdk.services.kms.model.EncryptionAlgorithmSpec;
 
-@ApplicationScoped
+//TODO FIX This for local development
+//@ApplicationScoped
 public class EncryptImpl implements Encrypt {
     private static final byte[] EMPTY = "".getBytes(StandardCharsets.UTF_8);
 
