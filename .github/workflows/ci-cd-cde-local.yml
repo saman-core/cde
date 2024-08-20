@@ -123,8 +123,8 @@ jobs:
           TEMPLATE_SERVER_URL: ${{ secrets.TEMPLATE_SERVER_URL_LOCAL }}
           OIDC_TOKEN_URL: ${{ secrets.OIDC_TOKEN_URL }}
         run: |
-          curl  -X POST -d "grant_type=client_credentials&scope=openid&client_id=${{ env.CLIENT_ID }}&client_secret=${{ env.CLIENT_SECRET }}" ${{ env.OIDC_TOKEN_URL }} -k | jq -r '.access_token' > auttoken
-          curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer $(cat auttoken)" -X POST -d "$(cat form.json)" ${{ env.TEMPLATE_SERVER_URL }}/templates/${{ env.PRODUCT }}/${{ env.TEMPLATE }}
+          curl  -X POST -d "grant_type=client_credentials&scope=openid&client_id=${{ env.CLIENT_ID }}&client_secret=${{ env.CLIENT_SECRET }}" ${{ env.OIDC_TOKEN_URL }} --insecure | jq -r '.access_token' > auttoken
+          curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer $(cat auttoken)" -X POST -d "$(cat form.json)" ${{ env.TEMPLATE_SERVER_URL }}/templates/${{ env.PRODUCT }}/${{ env.TEMPLATE }} --insecure
 
       - name: Set Kubectl
         uses: azure/setup-kubectl@v4
