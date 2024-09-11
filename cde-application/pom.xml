@@ -12,7 +12,7 @@
     <properties>
         <maven.compiler.release>17</maven.compiler.release>
 
-        <common.version>0.1.0</common.version>
+        <common.version>0.1.1</common.version>
         <common-error.version>0.0.3</common-error.version>
         <condition-template-client.version>0.0.4</condition-template-client.version>
     </properties>
