@@ -11,6 +11,7 @@
 
   <properties>
     <maven.compiler.release>21</maven.compiler.release>
+    <common.version>1.0.0-SNAPSHOT</common.version>
     <common-error.version>1.0.0-SNAPSHOT</common-error.version>
   </properties>
 
@@ -20,6 +21,12 @@
       <artifactId>APP_NAME-model</artifactId>
       <version>APP_VERSION</version>
       <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.samancore</groupId>
+      <artifactId>common</artifactId>
+      <version>${common.version}</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>io.samancore</groupId>
