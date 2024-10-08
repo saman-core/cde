@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>io.samancore</groupId>
@@ -9,13 +9,14 @@
     </parent>
     <groupId>io.samancore.cde</groupId>
     <artifactId>APP_NAME-application</artifactId>
-    <properties>
-        <maven.compiler.release>17</maven.compiler.release>
 
-        <common.version>0.1.1</common.version>
-        <common-error.version>0.0.3</common-error.version>
-        <condition-template-client.version>0.0.4</condition-template-client.version>
+    <properties>
+        <maven.compiler.release>21</maven.compiler.release>
+        <common.version>1.0.0-SNAPSHOT</common.version>
+        <common-error.version>1.0.0-SNAPSHOT</common-error.version>
+        <condition-template-client.version>1.0.0-SNAPSHOT</condition-template-client.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>io.samancore.cde</groupId>
@@ -54,11 +55,11 @@
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-resteasy-reactive-jackson</artifactId>
+            <artifactId>quarkus-rest</artifactId>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-resteasy-reactive</artifactId>
+            <artifactId>quarkus-rest-jackson</artifactId>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
