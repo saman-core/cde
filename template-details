@@ -1,3 +1,4 @@
+moduleName=MODULE_NAME
 templateName=TEMPLATE_NAME
 productName=PRODUCT_NAME
 packageName=io.samancore.template
