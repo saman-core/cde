@@ -2,6 +2,10 @@ name: CI-CD-CDE-LOCAL
 on:
   workflow_dispatch:
     inputs:
+      module:
+        description: 'Module name'
+        required: true
+        type: string
       product:
         description: 'Product name'
         required: true
@@ -12,12 +16,13 @@ on:
         type: string
 
 env:
+  MODULE: ${{ inputs.module }}
   PRODUCT: ${{ inputs.product }}
   TEMPLATE: ${{ inputs.template }}
   REGISTRY: ghcr.io
   ACTOR: saman-core
-  IMAGE_APP_NAME: cde-${{ inputs.product }}-${{ inputs.template }}
-  APP_NAME: cde-${{ inputs.product }}-${{ inputs.template }}
+  IMAGE_APP_NAME: ${{ inputs.module }}-cde-${{ inputs.product }}-${{ inputs.template }}
+  APP_NAME: ${{ inputs.module }}-cde-${{ inputs.product }}-${{ inputs.template }}
   MIN_SCALE: 0
 
 jobs:
@@ -28,6 +33,7 @@ jobs:
     steps:
       - name: Log inputs
         run: |
+          echo "Module: $MODULE"
           echo "Product: $PRODUCT"
           echo "Template: $TEMPLATE"
 
@@ -52,8 +58,8 @@ jobs:
 
       - name: Copy files
         run: |
-          cp product-repository/products/$(echo $PRODUCT)/templates/$(echo $TEMPLATE)/form.json ./form.json
-          sed -i -e 's/TEMPLATE_NAME/${{ env.TEMPLATE }}/g' -e 's/PRODUCT_NAME/${{ env.PRODUCT }}/g' ./template-details
+          cp product-repository/$(echo $MODULE)/products/$(echo $PRODUCT)/templates/$(echo $TEMPLATE)/form.json ./form.json
+          sed -i -e 's/MODULE_NAME/${{ env.MODULE }}/g' -e 's/TEMPLATE_NAME/${{ env.TEMPLATE }}/g' -e 's/PRODUCT_NAME/${{ env.PRODUCT }}/g' ./template-details
 
       - name: Setup graalvm
         uses: graalvm/setup-graalvm@v1
@@ -66,7 +72,7 @@ jobs:
 
       - name: Replace client properties
         run: |
-          sed -i -e 's/TEMPLATE_NAME/${{ env.TEMPLATE }}/g' -e 's/PRODUCT_NAME/${{ env.PRODUCT }}/g' ./cde-client/src/main/resources/META-INF/microprofile-config.properties
+          sed -i -e 's/MODULE_NAME/${{ env.MODULE }}/g' -e 's/TEMPLATE_NAME/${{ env.TEMPLATE }}/g' -e 's/PRODUCT_NAME/${{ env.PRODUCT }}/g' ./cde-client/src/main/resources/META-INF/microprofile-config.properties
 
       - name: Replace POMs name and version
         run: |
@@ -124,7 +130,7 @@ jobs:
           OIDC_TOKEN_URL: ${{ secrets.OIDC_TOKEN_URL }}
         run: |
           curl  -X POST -d "grant_type=client_credentials&scope=openid&client_id=${{ env.CLIENT_ID }}&client_secret=${{ env.CLIENT_SECRET }}" ${{ env.OIDC_TOKEN_URL }} --insecure | jq -r '.access_token' > auttoken
-          curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer $(cat auttoken)" -X POST -d "$(cat form.json)" ${{ env.TEMPLATE_SERVER_URL }}/templates/${{ env.PRODUCT }}/${{ env.TEMPLATE }} --insecure
+          curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer $(cat auttoken)" -X POST -d "$(cat form.json)" ${{ env.TEMPLATE_SERVER_URL }}/templates/${{ env.MODULE }}/${{ env.PRODUCT }}/${{ env.TEMPLATE }} --insecure
 
       - name: Set Kubectl
         uses: azure/setup-kubectl@v4
